@@ -8,17 +8,17 @@ data = [{"likes": 10, "name": "a", "views": 2000},
 
 #to add data to the db
 for i in range(len(data)):
-  response = requests.put(BASE + "id/"+str(i),data[i])
+  response = requests.put(BASE + "Video/"+str(i),data[i])
 	print(response.json())
 
 #to delete a data from db
-response = requests.delete(BASE + 'id/0')
+response = requests.delete(BASE + 'Video/0')
 print(response)
 
 #to fetch a data from db
-response = requests.get(BASE + "id/1")
+response = requests.get(BASE + "Video/1")
 print(response.json())
 
 #to update data in db
-response = requests.patch(BASE + "id/1", {"name": "d", "views": 200000, "likes": 120})
+response = requests.patch(BASE + "Video/1", {"name": "d", "views": 200000, "likes": 120})
 print(response.json())
